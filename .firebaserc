@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "ostoja-chess": {
+      "hosting": {
+        "angular-chess": [
+          "ostoja-chess"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "ostoja-chess"
+  }
+}

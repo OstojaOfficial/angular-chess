@@ -3,16 +3,17 @@ import { Component, Input } from '@angular/core';
 @Component({
   selector: 'app-square',
   template: `
-    <button *ngIf="!value">{{ value }}</button>
-    <button *ngIf="value == 'p'">{{ value }}</button>
-    <button *ngIf="value == 'r'">{{ value }}</button>
-    <button *ngIf="value == 'n'">{{ value }}</button>
-    <button *ngIf="value == 'b'">{{ value }}</button>
-    <button *ngIf="value == 'q'">{{ value }}</button>
-    <button *ngIf="value == 'k'">{{ value }}</button>
+    <button nbButton *ngIf="!value" [ngStyle]="{'background-color': num%2==0 ? '#edd5bd' : '#79534c'}">{{ value }}</button>
+    <button nbButton *ngIf="value == 'p'" [ngStyle]="{'background-color': num%2==0 ? '#edd5bd' : '#79534c'}" >{{ value }}</button>
+    <button nbButton *ngIf="value == 'r'" [ngStyle]="{'background-color': num%2==0 ? '#edd5bd' : '#79534c'}">{{ value }}</button>
+    <button nbButton *ngIf="value == 'n'" [ngStyle]="{'background-color': num%2==0 ? '#edd5bd' : '#79534c'}">{{ value }}</button>
+    <button nbButton *ngIf="value == 'b'" [ngStyle]="{'background-color': num%2==0 ? '#edd5bd' : '#79534c'}">{{ value }}</button>
+    <button nbButton *ngIf="value == 'q'" [ngStyle]="{'background-color': num%2==0 ? '#edd5bd' : '#79534c'}">{{ value }}</button>
+    <button nbButton *ngIf="value == 'k'" [ngStyle]="{'background-color': num%2==0 ? '#edd5bd' : '#79534c'}">{{ value }}</button>
   `,
-  styles: ['button { width: 100%; height: 100%; font-size: 1em !important; }']
+  styleUrls: ['./square.component.scss']
 })
 export class SquareComponent {
   @Input() value!: string;
+  @Input() num!: number;
 }
